@@ -16,5 +16,36 @@ namespace teachingRoom111SS.allForm
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (txtUserName.Text == "admin" && txtPassword.Text == "admin") {
+                frmDashboard fm = new frmDashboard();
+                fm.Show();
+                this.Hide();
+            }
+            else
+            {
+                if (txtUserName.Text != "admin")
+                {
+                    lblShowUserName.Visible = true;
+                    txtUserName.Focus();
+                }
+                else
+                {
+                    lblShowUserName.Visible = false;
+                }
+                if (txtPassword.Text != "admin")
+                {
+                    lblShowPassword.Visible = true;
+                    txtUserName.Focus();
+                }
+                else
+                {
+                    lblShowPassword.Visible = false;
+                }
+            }
+
+        }
     }
 }
