@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace teachingRoom111SS.allForm
+namespace teachingRoom111SS.allForm.user
 {
-    public partial class frmUsers : Form
+    public partial class frmAddUser : Form
     {
-        public frmUsers()
+        public frmAddUser()
         {
             InitializeComponent();
         }
