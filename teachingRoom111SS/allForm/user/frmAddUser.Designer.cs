@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtUserName = new System.Windows.Forms.TextBox();
-            this.cbbRole = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtPinCode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.cbbRole = new System.Windows.Forms.ComboBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +52,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(446, 75);
             this.panel1.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(113, 29);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Add New User";
             // 
             // panel2
             // 
@@ -69,55 +78,14 @@
             this.panel2.Size = new System.Drawing.Size(446, 312);
             this.panel2.TabIndex = 1;
             // 
-            // panel3
+            // label3
             // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 336);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(446, 51);
-            this.panel3.TabIndex = 2;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(282, 176);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(112, 37);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 29);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Full Name";
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.Location = new System.Drawing.Point(126, 41);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(268, 37);
-            this.txtUserName.TabIndex = 2;
-            // 
-            // cbbRole
-            // 
-            this.cbbRole.FormattingEnabled = true;
-            this.cbbRole.Items.AddRange(new object[] {
-            "Admin",
-            "User",
-            "Seller",
-            "Guest"});
-            this.cbbRole.Location = new System.Drawing.Point(126, 131);
-            this.cbbRole.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbbRole.Name = "cbbRole";
-            this.cbbRole.Size = new System.Drawing.Size(268, 37);
-            this.cbbRole.TabIndex = 3;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(33, 134);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 29);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Role";
             // 
             // txtPinCode
             // 
@@ -137,23 +105,56 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Pin Code";
             // 
-            // label3
+            // cbbRole
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 134);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 29);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Role";
+            this.cbbRole.FormattingEnabled = true;
+            this.cbbRole.Items.AddRange(new object[] {
+            "Admin",
+            "User",
+            "Seller",
+            "Guest"});
+            this.cbbRole.Location = new System.Drawing.Point(126, 131);
+            this.cbbRole.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbbRole.Name = "cbbRole";
+            this.cbbRole.Size = new System.Drawing.Size(268, 37);
+            this.cbbRole.TabIndex = 3;
             // 
-            // label5
+            // txtUserName
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 29);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Add New User";
+            this.txtUserName.Location = new System.Drawing.Point(126, 41);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(268, 37);
+            this.txtUserName.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(33, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 29);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Full Name";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(282, 176);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(112, 37);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 336);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(446, 51);
+            this.panel3.TabIndex = 2;
             // 
             // frmAddUser
             // 

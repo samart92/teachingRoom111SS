@@ -26,7 +26,8 @@ namespace teachingRoom111SS.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;uid=root;database=teachingroom111ss2025")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;uid=root;database=teachingroom111ss2025;convert zero datetime=tr" +
+            "ue")]
         public string MySqlDB {
             get {
                 return ((string)(this["MySqlDB"]));
