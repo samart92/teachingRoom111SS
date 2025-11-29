@@ -32,7 +32,22 @@ namespace teachingRoom111SS.allForm.user
             cm.ExecuteNonQuery();
             cn.Close();
 
-          
+            GetAllUser();
+
+        }
+
+        private void GetAllUser()
+        {
+            MySqlConnection cnn = new MySqlConnection(Properties.Settings.Default.MySqlDB);
+            string sql = "SELECT * FROM tbuser";
+            MySqlCommand cm = new MySqlCommand( sql, cnn );
+            MySqlDataAdapter da = new MySqlDataAdapter(cm);
+            DataTable dt = new DataTable();
+            cnn.Open();
+            da.Fill( dt );
+            cnn.Close();
+
+            dataGridView1.DataSource = dt;
 
         }
     }
