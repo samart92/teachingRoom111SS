@@ -32,6 +32,7 @@ namespace teachingRoom111SS.allForm.user
             cm.ExecuteNonQuery();
             cn.Close();
 
+            //reload data
             GetAllUser();
 
         }
@@ -48,6 +49,34 @@ namespace teachingRoom111SS.allForm.user
             cnn.Close();
 
             dataGridView1.DataSource = dt;
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            //insert new user to table user
+            MySqlConnection cn = new MySqlConnection(Properties.Settings.Default.MySqlDB);
+            //insert
+            string sql = $"DELETE FROM tbuser WHERE id='{txtID.Text}'";
+            // command  insert delete update
+            MySqlCommand cm = new MySqlCommand(sql, cn);
+
+            //open
+            cn.Open();
+            cm.ExecuteNonQuery();
+            cn.Close();
+
+            //reload data
+            GetAllUser();
+        }
+
+        private void frmAddUser_Load(object sender, EventArgs e)
+        {
+            GetAllUser();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
