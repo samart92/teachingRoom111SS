@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using teachingRoom111SS.allForm;
+using teachingRoom111SS.allForm.product;
 using teachingRoom111SS.allForm.user;
 
 namespace teachingRoom111SS
@@ -18,7 +19,7 @@ namespace teachingRoom111SS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAddUser());
+            Application.Run(new frmAddProduct());
         }
     }
 }
