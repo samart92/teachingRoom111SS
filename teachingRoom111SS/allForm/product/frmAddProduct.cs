@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,7 +23,7 @@ namespace teachingRoom111SS.allForm.product
         private void btnAdd_Click(object sender, EventArgs e)
         {
             
-            product.Insert(1, txtSku.Text,txtProName.Text, Convert.ToDouble(txtPrice.Text),Convert.ToDouble(txtRate.Text), Convert.ToInt16(chbActive.Checked));
+            product.Insert(Convert.ToInt16(cbbCatagory.SelectedValue), txtSku.Text,txtProName.Text, Convert.ToDouble(txtPrice.Text),Convert.ToDouble(txtRate.Text), Convert.ToInt16(chbActive.Checked));
 
             product.SelectAll(dataGridView1);
         }
@@ -30,6 +31,24 @@ namespace teachingRoom111SS.allForm.product
         private void frmAddProduct_Load(object sender, EventArgs e)
         {
             product.SelectAll(dataGridView1);
+            GetallCatagories();
+        }
+
+        private void GetallCatagories()
+        {
+            MySqlConnection cn = new MySqlConnection(Properties.Settings.Default.MySqlDB);
+            string sql = "SELECT * FROM `tbcategories`";
+            MySqlCommand cm = new MySqlCommand(sql, cn);
+            MySqlDataAdapter da = new MySqlDataAdapter(cm);
+            DataTable dt = new DataTable();
+            cn.Open();
+            da.Fill(dt);
+            cn.Close();
+
+            cbbCatagory.DataSource = dt;
+            cbbCatagory.DisplayMember="Catname";
+            cbbCatagory.ValueMember = "id";
+
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -62,5 +81,7 @@ namespace teachingRoom111SS.allForm.product
             product.Update(1, txtSku.Text, txtProName.Text, Convert.ToDouble( txtPrice.Text), Convert.ToDouble(txtRate.Text),1, Convert.ToInt16(id));
             product.SelectAll(dataGridView1);
         }
+
+        
     }
 }

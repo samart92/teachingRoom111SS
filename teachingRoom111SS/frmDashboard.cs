@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using teachingRoom111SS.allForm;
+using teachingRoom111SS.userControll;
 
 namespace teachingRoom111SS
 {
@@ -43,6 +46,36 @@ namespace teachingRoom111SS
         {
             frmInventory fm = new frmInventory();
             fm.Show();
+        }
+
+        private void frmDashboard_Load(object sender, EventArgs e)
+        {
+
+            GetAllProductCart();
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void GetAllProductCart()
+        {
+            MySqlConnection cn = new MySqlConnection(Properties.Settings.Default.MySqlDB);
+            string sql = "SELECT * FROM `tbproducts`";
+            MySqlCommand cm = new MySqlCommand(sql, cn);            
+            cn.Open();
+            MySqlDataReader dr = cm.ExecuteReader();
+            while (dr.Read()) {
+                ucProductCard uc = new ucProductCard($"{dr.GetValue(3).ToString()}", $"{dr.GetValue(2)}", $"$ {dr.GetValue(4)}");
+                flowLayoutPanel1.Controls.Add(uc);
+            }
+            cn.Close();
         }
     }
 }

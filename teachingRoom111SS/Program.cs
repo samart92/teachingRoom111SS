@@ -19,7 +19,7 @@ namespace teachingRoom111SS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAddProduct());
+            Application.Run(new frmDashboard());
         }
     }
 }
