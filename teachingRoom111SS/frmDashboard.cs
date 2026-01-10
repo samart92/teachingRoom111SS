@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using teachingRoom111SS.allForm;
+using teachingRoom111SS.allForm.product;
 using teachingRoom111SS.userControll;
 
 namespace teachingRoom111SS
@@ -38,7 +39,7 @@ namespace teachingRoom111SS
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            frmProducts fm = new frmProducts();
+           frmAddProduct fm = new frmAddProduct();
             fm.Show();
         }
 
@@ -88,7 +89,7 @@ namespace teachingRoom111SS
             MySqlDataReader dr = cm.ExecuteReader();
             while (dr.Read())
             {
-                var uc = new ucCategory($"{dr.GetValue(1).ToString()}");
+                var uc = new ucCategory($"{dr.GetValue(1).ToString()}", $"{dr.GetValue(0).ToString()}");
                 flowLayoutPanel2.Controls.Add(uc);
             }
             cn.Close();

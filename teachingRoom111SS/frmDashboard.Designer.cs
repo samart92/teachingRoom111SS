@@ -291,7 +291,7 @@
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnPayment;
         private System.Windows.Forms.Button btnLogOut;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
