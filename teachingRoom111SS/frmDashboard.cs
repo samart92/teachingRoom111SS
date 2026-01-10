@@ -50,8 +50,8 @@ namespace teachingRoom111SS
 
         private void frmDashboard_Load(object sender, EventArgs e)
         {
-
             GetAllProductCart();
+            GetAllCategory();
         }
 
         private void btnPayment_Click(object sender, EventArgs e)
@@ -74,6 +74,22 @@ namespace teachingRoom111SS
             while (dr.Read()) {
                 ucProductCard uc = new ucProductCard($"{dr.GetValue(3).ToString()}", $"{dr.GetValue(2)}", $"$ {dr.GetValue(4)}");
                 flowLayoutPanel1.Controls.Add(uc);
+            }
+            cn.Close();
+        }
+
+
+        private void GetAllCategory()
+        {
+            MySqlConnection cn = new MySqlConnection(Properties.Settings.Default.MySqlDB);
+            string sql = "SELECT * FROM `tbcategories`";
+            MySqlCommand cm = new MySqlCommand(sql, cn);
+            cn.Open();
+            MySqlDataReader dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                var uc = new ucCategory($"{dr.GetValue(1).ToString()}");
+                flowLayoutPanel2.Controls.Add(uc);
             }
             cn.Close();
         }

@@ -36,11 +36,12 @@
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnProducts = new System.Windows.Forms.Button();
             this.btnOrders = new System.Windows.Forms.Button();
+            this.btnDashbord = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnLogOut = new System.Windows.Forms.Button();
-            this.btnDashbord = new System.Windows.Forms.Button();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -180,6 +181,24 @@
             this.btnOrders.UseVisualStyleBackColor = true;
             this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
+            // btnDashbord
+            // 
+            this.btnDashbord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDashbord.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDashbord.FlatAppearance.BorderSize = 2;
+            this.btnDashbord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashbord.ForeColor = System.Drawing.Color.White;
+            this.btnDashbord.Image = global::teachingRoom111SS.Properties.Resources.icons8_dashboard_layout_40;
+            this.btnDashbord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashbord.Location = new System.Drawing.Point(4, 117);
+            this.btnDashbord.Name = "btnDashbord";
+            this.btnDashbord.Size = new System.Drawing.Size(164, 43);
+            this.btnDashbord.TabIndex = 0;
+            this.btnDashbord.Text = "Dashboard";
+            this.btnDashbord.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDashbord.UseVisualStyleBackColor = true;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlText;
@@ -189,25 +208,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(932, 100);
             this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel3.Controls.Add(this.flowLayoutPanel1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(173, 100);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(932, 426);
-            this.panel3.TabIndex = 2;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(932, 426);
-            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnLogOut
             // 
@@ -227,23 +227,35 @@
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // btnDashbord
+            // panel3
             // 
-            this.btnDashbord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDashbord.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnDashbord.FlatAppearance.BorderSize = 2;
-            this.btnDashbord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashbord.ForeColor = System.Drawing.Color.White;
-            this.btnDashbord.Image = global::teachingRoom111SS.Properties.Resources.icons8_dashboard_layout_40;
-            this.btnDashbord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashbord.Location = new System.Drawing.Point(4, 117);
-            this.btnDashbord.Name = "btnDashbord";
-            this.btnDashbord.Size = new System.Drawing.Size(164, 43);
-            this.btnDashbord.TabIndex = 0;
-            this.btnDashbord.Text = "Dashboard";
-            this.btnDashbord.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDashbord.UseVisualStyleBackColor = true;
+            this.panel3.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel3.Controls.Add(this.flowLayoutPanel1);
+            this.panel3.Controls.Add(this.flowLayoutPanel2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(173, 100);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(932, 426);
+            this.panel3.TabIndex = 2;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Info;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 50);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(932, 376);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(932, 50);
+            this.flowLayoutPanel2.TabIndex = 1;
             // 
             // frmDashboard
             // 
@@ -280,5 +292,6 @@
         private System.Windows.Forms.Button btnPayment;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }

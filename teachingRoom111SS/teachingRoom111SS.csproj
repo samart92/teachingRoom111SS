@@ -155,6 +155,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="userControll\ucCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControll\ucCategory.Designer.cs">
+      <DependentUpon>ucCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="userControll\ucProductCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -189,6 +195,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="userControll\ucCategory.resx">
+      <DependentUpon>ucCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="userControll\ucProductCard.resx">
       <DependentUpon>ucProductCard.cs</DependentUpon>
     </EmbeddedResource>
