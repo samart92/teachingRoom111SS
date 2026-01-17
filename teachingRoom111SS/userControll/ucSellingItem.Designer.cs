@@ -88,6 +88,7 @@
             this.btnSubstruck.TabIndex = 4;
             this.btnSubstruck.Text = "-";
             this.btnSubstruck.UseVisualStyleBackColor = true;
+            this.btnSubstruck.Click += new System.EventHandler(this.btnSubstruck_Click);
             // 
             // btnDiscount
             // 
@@ -109,11 +110,13 @@
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // ucSellingItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDiscount);
             this.Controls.Add(this.btnSubstruck);
