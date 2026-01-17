@@ -41,6 +41,7 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -206,7 +207,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(173, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(932, 100);
+            this.panel2.Size = new System.Drawing.Size(1321, 100);
             this.panel2.TabIndex = 1;
             // 
             // btnLogOut
@@ -219,9 +220,9 @@
             this.btnLogOut.ForeColor = System.Drawing.Color.White;
             this.btnLogOut.Image = global::teachingRoom111SS.Properties.Resources.icons8_log_out_40;
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogOut.Location = new System.Drawing.Point(874, 22);
+            this.btnLogOut.Location = new System.Drawing.Point(1265, 25);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(55, 56);
+            this.btnLogOut.Size = new System.Drawing.Size(53, 56);
             this.btnLogOut.TabIndex = 8;
             this.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogOut.UseVisualStyleBackColor = true;
@@ -231,11 +232,12 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Highlight;
             this.panel3.Controls.Add(this.flowLayoutPanel1);
+            this.panel3.Controls.Add(this.flowLayoutPanel3);
             this.panel3.Controls.Add(this.flowLayoutPanel2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(173, 100);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(932, 426);
+            this.panel3.Size = new System.Drawing.Size(1321, 426);
             this.panel3.TabIndex = 2;
             // 
             // flowLayoutPanel1
@@ -245,8 +247,17 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 50);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(932, 376);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(891, 376);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.BackColor = System.Drawing.SystemColors.Control;
+            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(891, 50);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(430, 376);
+            this.flowLayoutPanel3.TabIndex = 0;
             // 
             // flowLayoutPanel2
             // 
@@ -254,14 +265,14 @@
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(932, 50);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1321, 50);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1105, 526);
+            this.ClientSize = new System.Drawing.Size(1494, 526);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -293,5 +304,6 @@
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
     }
 }

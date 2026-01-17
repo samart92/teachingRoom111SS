@@ -22,7 +22,12 @@ namespace teachingRoom111SS.userControll
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(lblProName.Text);
+            ucSellingItem selling = new ucSellingItem(lblProName.Text, lblPrices.Text);
+            frmDashboard fm = (frmDashboard)Application.OpenForms["frmDashboard"];
+            fm.flowLayoutPanel3.Controls.Add(selling);
+
+
+            
         }
     }
 }

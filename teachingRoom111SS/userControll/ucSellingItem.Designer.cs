@@ -76,10 +76,12 @@
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "+";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSubstruck
             // 
             this.btnSubstruck.Font = new System.Drawing.Font("Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubstruck.ForeColor = System.Drawing.Color.Black;
             this.btnSubstruck.Location = new System.Drawing.Point(255, 22);
             this.btnSubstruck.Name = "btnSubstruck";
             this.btnSubstruck.Size = new System.Drawing.Size(49, 51);
@@ -100,6 +102,7 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Khmer OS Siemreap", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.Red;
             this.btnClose.Location = new System.Drawing.Point(357, 22);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(49, 51);

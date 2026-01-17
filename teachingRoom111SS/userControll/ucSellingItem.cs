@@ -12,9 +12,24 @@ namespace teachingRoom111SS.userControll
 {
     public partial class ucSellingItem : UserControl
     {
-        public ucSellingItem()
+        int count = 1;
+        string[] price;
+
+        public ucSellingItem(string name, string _price)
         {
             InitializeComponent();
+            lblProName.Text = name;
+            price = _price.Split('$');
+            lblPrice.Text = $"{_price} x {count}"; // 10.00 X 2
+            lblTotalPrice.Text = "$ " + ( Convert.ToDouble( price[1]) * count).ToString();
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            count += 1;
+            lblTotalPrice.Text = "$ " + (Convert.ToDouble(price[1]) * count).ToString();
+            lblPrice.Text = $"$ {price[1]} x {count}"; // 10.00 X 2
         }
     }
 }
