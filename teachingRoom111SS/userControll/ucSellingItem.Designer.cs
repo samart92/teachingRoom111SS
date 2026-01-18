@@ -134,13 +134,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblProName;
-        private System.Windows.Forms.Label lblTotalPrice;
-        private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSubstruck;
         private System.Windows.Forms.Button btnDiscount;
         private System.Windows.Forms.Button btnClose;
+        public System.Windows.Forms.Label lblProName;
+        public System.Windows.Forms.Label lblTotalPrice;
+        public System.Windows.Forms.Label lblPrice;
     }
 }

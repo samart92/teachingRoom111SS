@@ -94,5 +94,35 @@ namespace teachingRoom111SS
             }
             cn.Close();
         }
+
+        private void btnPayNow_Click(object sender, EventArgs e)
+        {
+            string orders_ID = null;
+            string[] totalprice = lblTotalPrice.Text.Split('$');
+            MySqlConnection cn = new MySqlConnection(Properties.Settings.Default.MySqlDB);
+            string sql = $"INSERT INTO `tborders`( `cashier_id`, `status`, `opened_at`, `closed_at`, `subtotal`, `tax_total`, `discount_total`, `grand_total`) VALUES ('1','1','{DateTime.Today.ToString("yyyy-MM-dd h:mm:ss")}','{DateTime.Today.ToString("yyyy-MM-dd h:mm:ss")}','{Convert.ToDouble(totalprice[1])}','0','0','{Convert.ToDouble(totalprice[1])}')";
+            MySqlCommand cm = new MySqlCommand(sql, cn);
+            cn.Open();
+            cm.ExecuteNonQuery();
+            orders_ID = cm.LastInsertedId.ToString();
+            cn.Close();
+
+
+
+            //MessageBox.Show(orders_ID);
+            
+
+            foreach (ucSellingItem item in flowLayoutPanel3.Controls)
+            {
+                //insert data to tborder_items
+                string sql1 = $"INSERT INTO `tborder_items`( `order_id`, `Product_id`, `name_snapshot`, `unit_price`, `qty`, `line_subtotal`, `tax_amount`, `discount_amount`, `line_total`) VALUES ('{orders_ID}','1','{item.lblProName.Text}','1','1','1','0','0','1')";
+                MySqlCommand cm1 = new MySqlCommand(sql1, cn);
+                cn.Open();
+                cm1.ExecuteNonQuery();
+                cn.Close();
+            }
+
+
+        }
     }
 }
