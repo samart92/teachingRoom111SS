@@ -134,11 +134,40 @@ namespace teachingRoom111SS
 
         private void btnDashbord_Click(object sender, EventArgs e)
         {
+            //SELECT sum(`grand_total`) as revenue, COUNT(`id`) as Total_Order, AVG(`grand_total`) as sellaverage FROM `tborders` 
             flowLayoutPanel2.Visible = false;
             panel4.Visible = false;
             flowLayoutPanel1.Controls.Clear();
-            ucSellingInformation uc = new ucSellingInformation("revene","10");
-            flowLayoutPanel1.Controls.Add(uc);
+          
+            MySqlConnection cn = new MySqlConnection(Properties.Settings.Default.MySqlDB);
+            string sql = "SELECT sum(`grand_total`) as revenue, COUNT(`id`) as Total_Order, AVG(`grand_total`) as sellaverage FROM `tborders`";
+            MySqlCommand cm = new MySqlCommand(sql, cn);
+            cn.Open();
+            MySqlDataReader dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                ucSellingInformation uc = new ucSellingInformation("revene", dr.GetValue(0).ToString());
+                flowLayoutPanel1.Controls.Add(uc);
+                ucSellingInformation uc1 = new ucSellingInformation("Order", dr.GetValue(1).ToString(), "https://img.icons8.com/ios7/1200/sell.jpg");
+                flowLayoutPanel1.Controls.Add(uc1);
+                ucSellingInformation uc2 = new ucSellingInformation("Average", dr.GetValue(2).ToString(), "https://icon-library.com/images/sell-icon-png/sell-icon-png-17.jpg");
+                flowLayoutPanel1.Controls.Add(uc2);
+            }
+            cn.Close();
+
+
+            /// show total order item
+            
+             sql = "SELECT SUM(`Product_id`) FROM `tborder_items`";
+             cm = new MySqlCommand(sql, cn);
+            cn.Open();
+             dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                ucSellingInformation uc = new ucSellingInformation("Item Sold", dr.GetValue(0).ToString());
+                flowLayoutPanel1.Controls.Add(uc);
+                
+            }
         }
     }
 }
