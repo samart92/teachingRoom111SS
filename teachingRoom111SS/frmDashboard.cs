@@ -32,9 +32,11 @@ namespace teachingRoom111SS
         }
 
         private void btnOrders_Click(object sender, EventArgs e)
-        {
-            frmOrders fm = new frmOrders();
-            fm.Show();
+        {   
+            flowLayoutPanel2.Visible = true;
+            panel4.Visible = true;
+            GetAllProductCart();
+            GetAllCategory();
         }
 
         private void btnProducts_Click(object sender, EventArgs e)
@@ -51,8 +53,11 @@ namespace teachingRoom111SS
 
         private void frmDashboard_Load(object sender, EventArgs e)
         {
-            GetAllProductCart();
-            GetAllCategory();
+            flowLayoutPanel2.Visible = false;
+            panel4.Visible = false;
+            
+
+
         }
 
         private void btnPayment_Click(object sender, EventArgs e)
@@ -67,6 +72,7 @@ namespace teachingRoom111SS
 
         private void GetAllProductCart()
         {
+            flowLayoutPanel1.Controls.Clear();
             MySqlConnection cn = new MySqlConnection(Properties.Settings.Default.MySqlDB);
             string sql = "SELECT * FROM `tbproducts`";
             MySqlCommand cm = new MySqlCommand(sql, cn);            
@@ -82,6 +88,7 @@ namespace teachingRoom111SS
 
         private void GetAllCategory()
         {
+            flowLayoutPanel2.Controls.Clear();
             MySqlConnection cn = new MySqlConnection(Properties.Settings.Default.MySqlDB);
             string sql = "SELECT * FROM `tbcategories`";
             MySqlCommand cm = new MySqlCommand(sql, cn);
@@ -123,6 +130,15 @@ namespace teachingRoom111SS
             }
 
 
+        }
+
+        private void btnDashbord_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel2.Visible = false;
+            panel4.Visible = false;
+            flowLayoutPanel1.Controls.Clear();
+            ucSellingInformation uc = new ucSellingInformation("revene","10");
+            flowLayoutPanel1.Controls.Add(uc);
         }
     }
 }

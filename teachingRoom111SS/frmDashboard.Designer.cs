@@ -206,6 +206,7 @@
             this.btnDashbord.Text = "Dashboard";
             this.btnDashbord.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDashbord.UseVisualStyleBackColor = true;
+            this.btnDashbord.Click += new System.EventHandler(this.btnDashbord_Click);
             // 
             // panel2
             // 
