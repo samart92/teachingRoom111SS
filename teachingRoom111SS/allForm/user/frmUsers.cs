@@ -63,5 +63,10 @@ namespace teachingRoom111SS.allForm
 
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            chart1.Series["Series1"].Points.Add(100);
+        }
     }
 }

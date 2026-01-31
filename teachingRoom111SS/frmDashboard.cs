@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using teachingRoom111SS.allForm;
 using teachingRoom111SS.allForm.product;
+using teachingRoom111SS.allForm.user;
 using teachingRoom111SS.userControll;
 
 namespace teachingRoom111SS
@@ -55,7 +56,9 @@ namespace teachingRoom111SS
         {
             flowLayoutPanel2.Visible = false;
             panel4.Visible = false;
-            
+            //btnDashbord_Click(sender, e);
+            btnOrders_Click(sender, e);
+
 
 
         }
@@ -138,7 +141,9 @@ namespace teachingRoom111SS
             flowLayoutPanel2.Visible = false;
             panel4.Visible = false;
             flowLayoutPanel1.Controls.Clear();
-          
+           
+            ucchart ch = new ucchart();
+
             MySqlConnection cn = new MySqlConnection(Properties.Settings.Default.MySqlDB);
             string sql = "SELECT sum(`grand_total`) as revenue, COUNT(`id`) as Total_Order, AVG(`grand_total`) as sellaverage FROM `tborders`";
             MySqlCommand cm = new MySqlCommand(sql, cn);
@@ -152,6 +157,10 @@ namespace teachingRoom111SS
                 flowLayoutPanel1.Controls.Add(uc1);
                 ucSellingInformation uc2 = new ucSellingInformation("Average", dr.GetValue(2).ToString(), "https://icon-library.com/images/sell-icon-png/sell-icon-png-17.jpg");
                 flowLayoutPanel1.Controls.Add(uc2);
+
+                ch.chart1.Series["number"].Points.AddXY("revene", dr.GetValue(0).ToString());
+                ch.chart1.Series["number"].Points.AddXY("Order", dr.GetValue(1).ToString());
+                ch.chart1.Series["number"].Points.AddXY("Average", dr.GetValue(2).ToString());
             }
             cn.Close();
 
@@ -166,8 +175,23 @@ namespace teachingRoom111SS
             {
                 ucSellingInformation uc = new ucSellingInformation("Item Sold", dr.GetValue(0).ToString());
                 flowLayoutPanel1.Controls.Add(uc);
-                
+
+                ch.chart1.Series["number"].Points.AddXY("Item Sold", dr.GetValue(0).ToString());
+
             }
+
+            
+            
+            
+            
+            flowLayoutPanel1.Controls.Add(ch);
+
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            frmAddUser fm = new frmAddUser();
+            fm.Show();
         }
     }
 }
